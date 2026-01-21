@@ -1,13 +1,10 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, Mail, MapPin } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,16 +22,18 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const contactInfo = [
+    { icon: Phone, label: "Teléfono", value: "+52 999 XXX XXXX" },
+    { icon: Mail, label: "Correo", value: "info@tabita.mx" },
+    { icon: MapPin, label: "Ubicación", value: "Temozón Norte, Mérida, Yucatán" },
+  ];
+
   return (
     <section id="contacto" className="section-padding bg-background bg-pattern">
-      <div className="container-custom" ref={ref}>
+      <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-          >
+          <ScrollReveal variant="fade-right">
             <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 block">
               Da el primer paso
             </span>
@@ -48,45 +47,23 @@ const Contact = () => {
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <Phone className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Teléfono</p>
-                  <p className="text-foreground font-medium">+52 999 XXX XXXX</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <Mail className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Correo</p>
-                  <p className="text-foreground font-medium">info@tabita.mx</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <MapPin className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Ubicación</p>
-                  <p className="text-foreground font-medium">
-                    Temozón Norte, Mérida, Yucatán
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+            <StaggerContainer className="space-y-6" staggerDelay={0.1}>
+              {contactInfo.map((item) => (
+                <StaggerItem key={item.label} className="flex items-center gap-4">
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <item.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">{item.label}</p>
+                    <p className="text-foreground font-medium">{item.value}</p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </ScrollReveal>
 
           {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <ScrollReveal variant="fade-left" delay={0.2}>
             <form
               onSubmit={handleSubmit}
               className="bg-card p-8 md:p-10 rounded-xl shadow-strong border border-border"
@@ -179,7 +156,7 @@ const Contact = () => {
                 </Button>
               </div>
             </form>
-          </motion.div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
