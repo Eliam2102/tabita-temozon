@@ -1,12 +1,7 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import materialsImg from "@/assets/materials.jpg";
 
 const Materials = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const materials = [
     {
       title: "Carpintería en Madera",
@@ -28,15 +23,10 @@ const Materials = () => {
 
   return (
     <section id="materiales" className="section-padding bg-background">
-      <div className="container-custom" ref={ref}>
+      <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Grid */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
+          <ScrollReveal variant="fade-right">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="overflow-hidden rounded-lg shadow-medium h-48 bg-accent">
@@ -74,14 +64,10 @@ const Materials = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </ScrollReveal>
 
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <ScrollReveal variant="fade-left" delay={0.2}>
             <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 block">
               Calidad que se siente
             </span>
@@ -95,13 +81,10 @@ const Materials = () => {
             </p>
 
             {/* Materials Grid */}
-            <div className="grid sm:grid-cols-2 gap-6">
-              {materials.map((material, index) => (
-                <motion.div
+            <StaggerContainer className="grid sm:grid-cols-2 gap-6" staggerDelay={0.1}>
+              {materials.map((material) => (
+                <StaggerItem
                   key={material.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                   className="p-6 bg-secondary rounded-lg border border-border"
                 >
                   <h3 className="font-display text-xl text-foreground mb-2">
@@ -110,10 +93,10 @@ const Materials = () => {
                   <p className="text-muted-foreground text-sm">
                     {material.description}
                   </p>
-                </motion.div>
+                </StaggerItem>
               ))}
-            </div>
-          </motion.div>
+            </StaggerContainer>
+          </ScrollReveal>
         </div>
       </div>
     </section>

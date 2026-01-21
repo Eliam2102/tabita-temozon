@@ -1,13 +1,11 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Bed, Bath, Car, Maximize } from "lucide-react";
 import apartment1Bed from "@/assets/apartment-1bed.jpg";
 import apartment2Bed from "@/assets/apartment-2bed.jpg";
 
 const Typologies = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [activeTab, setActiveTab] = useState(0);
 
   const apartments = [
@@ -45,28 +43,18 @@ const Typologies = () => {
 
   return (
     <section id="tipologias" className="section-padding bg-secondary">
-      <div className="container-custom" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
+      <div className="container-custom">
+        <ScrollReveal variant="fade-up" className="text-center mb-16">
           <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 block">
             Opciones para ti
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground">
             Tipologías de<br />Departamentos
           </h2>
-        </motion.div>
+        </ScrollReveal>
 
         {/* Tab Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center gap-4 mb-12"
-        >
+        <ScrollReveal variant="fade-up" delay={0.2} className="flex justify-center gap-4 mb-12">
           {apartments.map((apt, index) => (
             <button
               key={apt.title}
@@ -80,77 +68,99 @@ const Typologies = () => {
               {apt.title}
             </button>
           ))}
-        </motion.div>
+        </ScrollReveal>
 
         {/* Content */}
-        <motion.div
-          key={activeTab}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="grid lg:grid-cols-2 gap-12 items-center"
-        >
-          {/* Image */}
-          <div className="relative">
-            <div className="overflow-hidden rounded-lg shadow-strong">
-              <img
-                src={apartments[activeTab].image}
-                alt={`Departamento de ${apartments[activeTab].title}`}
-                className="w-full h-[400px] lg:h-[500px] object-cover"
-              />
-            </div>
-            {/* Area Badge */}
-            <div className="absolute top-6 right-6 bg-background/95 backdrop-blur-sm px-6 py-3 rounded-lg shadow-medium">
-              <p className="text-sm text-muted-foreground">Área aproximada</p>
-              <p className="text-2xl font-display text-foreground">{apartments[activeTab].area}</p>
-            </div>
-          </div>
-
-          {/* Details */}
-          <div>
-            <span className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-2 block">
-              Departamento de
-            </span>
-            <h3 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-              {apartments[activeTab].title}
-            </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              {apartments[activeTab].description}
-            </p>
-
-            {/* Features Grid */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {apartments[activeTab].features.map((feature) => (
-                <div
-                  key={feature.label}
-                  className="flex items-center gap-3 p-4 bg-background rounded-lg"
-                >
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <feature.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-foreground font-medium">{feature.label}</span>
-                </div>
-              ))}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            {/* Image */}
+            <div className="relative">
+              <div className="overflow-hidden rounded-lg shadow-strong">
+                <motion.img
+                  key={apartments[activeTab].image}
+                  initial={{ scale: 1.1, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  src={apartments[activeTab].image}
+                  alt={`Departamento de ${apartments[activeTab].title}`}
+                  className="w-full h-[400px] lg:h-[500px] object-cover"
+                />
+              </div>
+              {/* Area Badge */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 }}
+                className="absolute top-6 right-6 bg-background/95 backdrop-blur-sm px-6 py-3 rounded-lg shadow-medium"
+              >
+                <p className="text-sm text-muted-foreground">Área aproximada</p>
+                <p className="text-2xl font-display text-foreground">{apartments[activeTab].area}</p>
+              </motion.div>
             </div>
 
-            {/* Extras List */}
-            <div className="border-t border-border pt-6">
-              <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
-                Distribución incluye
+            {/* Details */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <span className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-2 block">
+                Departamento de
+              </span>
+              <h3 className="font-display text-4xl md:text-5xl text-foreground mb-4">
+                {apartments[activeTab].title}
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                {apartments[activeTab].description}
               </p>
-              <div className="flex flex-wrap gap-2">
-                {apartments[activeTab].extras.map((extra) => (
-                  <span
-                    key={extra}
-                    className="px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm"
+
+              {/* Features Grid */}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {apartments[activeTab].features.map((feature, index) => (
+                  <motion.div
+                    key={feature.label}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + index * 0.1 }}
+                    className="flex items-center gap-3 p-4 bg-background rounded-lg"
                   >
-                    {extra}
-                  </span>
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <feature.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <span className="text-foreground font-medium">{feature.label}</span>
+                  </motion.div>
                 ))}
               </div>
-            </div>
-          </div>
-        </motion.div>
+
+              {/* Extras List */}
+              <div className="border-t border-border pt-6">
+                <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
+                  Distribución incluye
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {apartments[activeTab].extras.map((extra, index) => (
+                    <motion.span
+                      key={extra}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.4 + index * 0.05 }}
+                      className="px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm"
+                    >
+                      {extra}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
