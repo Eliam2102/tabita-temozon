@@ -1,10 +1,24 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import buildingExterior from "@/assets/building-exterior.jpg";
 
 const Hero = () => {
   const [loaderPhase, setLoaderPhase] = useState<"loading" | "transitioning" | "done">("loading");
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  // Parallax scroll effects
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  
+  // Different parallax speeds for layered effect
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const overlayY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const linesY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.85, 0.95]);
 
   useEffect(() => {
     // Phase 1: Show loader
@@ -28,20 +42,48 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background - Always present but revealed */}
+    <section 
+      ref={sectionRef}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      {/* Background Layer - Slowest parallax */}
       <motion.div 
-        className="absolute inset-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: loaderPhase !== "loading" ? 1 : 0 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute inset-0 will-change-transform"
+        style={{ y: backgroundY }}
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: loaderPhase !== "loading" ? 1 : 0, scale: 1 }}
+        transition={{ duration: 1.8, ease: "easeOut" }}
       >
         <img
           src={buildingExterior}
           alt="Tábita Temozón - Edificio"
-          className="w-full h-full object-cover"
+          className="w-full h-[120%] object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/75 to-primary/90" />
+      </motion.div>
+
+      {/* Gradient Overlay Layer - Medium parallax with animated opacity */}
+      <motion.div 
+        className="absolute inset-0 will-change-transform"
+        style={{ 
+          y: overlayY,
+          opacity: overlayOpacity 
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/85" />
+        {/* Subtle noise texture overlay */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNhKSIvPjwvc3ZnPg==')]" />
+      </motion.div>
+
+      {/* Decorative parallax lines */}
+      <motion.div 
+        className="absolute inset-0 pointer-events-none will-change-transform"
+        style={{ y: linesY }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: loaderPhase === "done" ? 0.1 : 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-foreground to-transparent" />
+        <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-foreground to-transparent" />
       </motion.div>
 
       {/* Loader with Cut-out Typography */}
@@ -85,8 +127,11 @@ const Hero = () => {
         )}
       </AnimatePresence>
 
-      {/* Hero Content */}
-      <div className="relative z-10 text-center px-6">
+      {/* Hero Content - Fastest parallax for depth effect */}
+      <motion.div 
+        className="relative z-10 text-center px-6 will-change-transform"
+        style={{ y: contentY }}
+      >
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: loaderPhase !== "loading" ? 1 : 0 }}
@@ -153,7 +198,7 @@ const Hero = () => {
             </button>
           </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Bottom Info Bar */}
       <motion.div
