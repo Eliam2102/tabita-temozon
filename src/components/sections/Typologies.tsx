@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { Bed, Bath, Car, Maximize } from "lucide-react";
-import apartment1Bed from "@/assets/apartment-1bed.jpg";
+// apartment1Bed replaced with Cloudinary URL inline
 import apartment2Bed from "@/assets/apartment-2bed.jpg";
 
 const Typologies = () => {
@@ -14,7 +14,7 @@ const Typologies = () => {
       subtitle: "Diseño funcional y confort",
       description:
         "Diseñado para quienes buscan practicidad y confort, este modelo ofrece una distribución eficiente con espacios bien definidos y excelente iluminación natural.",
-      image: apartment1Bed,
+      image: "https://res.cloudinary.com/drvazwldo/image/upload/v1769033401/abita-sala-min_k8gsth.jpg",
       area: "45 m²",
       features: [
         { icon: Bed, label: "1 recámara" },
@@ -45,29 +45,31 @@ const Typologies = () => {
     <section id="tipologias" className="section-padding bg-secondary">
       <div className="container-custom">
         <ScrollReveal variant="fade-up" className="text-center mb-16">
-          <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 block">
+          <span className="text-xl md:text-2xl font-display font-bold tracking-[0.1em] text-muted-foreground mb-6 block">
             Opciones para ti
           </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground">
-            Tipologías de<br />Departamentos
+          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground">
+            <span className="block mb-6 md:mb-6 ">Tipologías de</span>
+            <span className="block font-bold font-fragile">Departamentos</span>
           </h2>
         </ScrollReveal>
 
-        {/* Tab Buttons */}
-        <ScrollReveal variant="fade-up" delay={0.2} className="flex justify-center gap-4 mb-12">
-          {apartments.map((apt, index) => (
-            <button
-              key={apt.title}
-              onClick={() => setActiveTab(index)}
-              className={`px-8 py-4 rounded-lg font-medium transition-all duration-300 ${
-                activeTab === index
+        {/* Tab Buttons - Horizontal Scroll on Mobile */}
+        <ScrollReveal variant="fade-up" delay={0.2} className="relative mb-12">
+          <div className="flex overflow-x-auto pb-4 gap-4 justify-center no-scrollbar touch-pan-x">
+            {apartments.map((apt, index) => (
+              <button
+                key={apt.title}
+                onClick={() => setActiveTab(index)}
+                className={`px-8 py-4 rounded-lg font-medium transition-all duration-300 ${activeTab === index
                   ? "bg-primary text-primary-foreground shadow-medium"
-                  : "bg-background text-foreground hover:bg-accent"
-              }`}
-            >
-              {apt.title}
-            </button>
-          ))}
+                  : "bg-background text-foreground hover:bg-primary hover:text-primary-foreground"
+                  }`}
+              >
+                <span className="whitespace-nowrap">{apt.title}</span>
+              </button>
+            ))}
+          </div>
         </ScrollReveal>
 
         {/* Content */}
@@ -90,18 +92,18 @@ const Typologies = () => {
                   transition={{ duration: 0.6 }}
                   src={apartments[activeTab].image}
                   alt={`Departamento de ${apartments[activeTab].title}`}
-                  className="w-full h-[400px] lg:h-[500px] object-cover"
+                  className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
                 />
               </div>
               {/* Area Badge */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
                 className="absolute top-6 right-6 bg-background/95 backdrop-blur-sm px-6 py-3 rounded-lg shadow-medium"
               >
                 <p className="text-sm text-muted-foreground">Área aproximada</p>
-                <p className="text-2xl font-display text-foreground">{apartments[activeTab].area}</p>
+                <p className="font-segoe text-2xl font-bold text-md text-foreground">{apartments[activeTab].area}</p>
               </motion.div>
             </div>
 
@@ -114,7 +116,7 @@ const Typologies = () => {
               <span className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-2 block">
                 Departamento de
               </span>
-              <h3 className="font-display text-4xl md:text-5xl text-foreground mb-4">
+              <h3 className="font-display text-4xl md:text-6xl text-foreground mb-4">
                 {apartments[activeTab].title}
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -134,7 +136,7 @@ const Typologies = () => {
                     <div className="p-2 bg-primary/10 rounded-lg">
                       <feature.icon className="w-5 h-5 text-primary" />
                     </div>
-                    <span className="text-foreground font-medium">{feature.label}</span>
+                    <span className="text-foreground font-bold font-segoe">{feature.label}</span>
                   </motion.div>
                 ))}
               </div>

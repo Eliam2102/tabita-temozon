@@ -14,8 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
+        display: ['Tabita Temozon', 'Playfair Display', 'Georgia', 'serif'],
         body: ['DM Sans', 'system-ui', 'sans-serif'],
+        fragile: ['Fragile Script', 'cursive'],
+        glamore: ['Glamore', 'sans-serif'],
+        segoe: ['Segoe UI', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

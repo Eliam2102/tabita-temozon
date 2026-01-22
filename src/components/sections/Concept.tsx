@@ -1,5 +1,5 @@
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
-import buildingDetail from "@/assets/building-detail.jpg";
+// buildingDetail replaced with Cloudinary URL inline
 
 const Concept = () => {
   const features = [
@@ -15,15 +15,15 @@ const Concept = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text Content */}
           <ScrollReveal variant="fade-right">
-            <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 block">
+            <span className="font-display text-2xl text-muted-foreground mb-4 block">
               Un desarrollo pensado para
             </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
+            <h2 className="font-fragile  text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
               La vida actual
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Tábita Temozón es un conjunto residencial de{" "}
-              <strong className="text-foreground">11 departamentos</strong> ubicado en 
+              <strong className="text-foreground">11 departamentos</strong> ubicado en
               Temozón Norte, una de las zonas con mayor crecimiento y plusvalía de Mérida.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-10">
@@ -48,20 +48,20 @@ const Concept = () => {
             <div className="relative">
               <div className="relative overflow-hidden rounded-lg shadow-strong">
                 <img
-                  src={buildingDetail}
+                  src="https://res.cloudinary.com/drvazwldo/image/upload/v1769033188/concepto-tabita-min_xztrnu.jpg"
                   alt="Tábita - Proyecto de baja densidad"
                   className="w-full h-[500px] lg:h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
               </div>
               {/* Floating Badge */}
-              <ScrollReveal 
-                variant="scale" 
+              <ScrollReveal
+                variant="scale"
                 delay={0.6}
                 className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-strong"
               >
                 <p className="text-sm uppercase tracking-widest mb-1">Proyecto</p>
-                <p className="text-2xl font-display">Baja Densidad</p>
+                <p className="text-2xl font-segoe font-bold">De Baja Densidad</p>
               </ScrollReveal>
             </div>
           </ScrollReveal>

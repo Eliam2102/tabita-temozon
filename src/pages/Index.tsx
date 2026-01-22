@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
@@ -10,20 +11,26 @@ import Investment from "@/components/sections/Investment";
 import Contact from "@/components/sections/Contact";
 
 const Index = () => {
+  const [isHeroLoaded, setIsHeroLoaded] = useState(false);
+
   return (
     <div className="min-h-screen">
-      <Header />
+      {isHeroLoaded && <Header />}
       <main>
-        <Hero />
-        <Concept />
-        <Location />
-        <Typologies />
-        <Materials />
-        <ReadyToLive />
-        <Investment />
-        <Contact />
+        <Hero onLoaded={setIsHeroLoaded} />
+        {isHeroLoaded && (
+          <>
+            <Concept />
+            <Location />
+            <Typologies />
+            <Materials />
+            <ReadyToLive />
+            <Investment />
+            <Contact />
+            <Footer />
+          </>
+        )}
       </main>
-      <Footer />
     </div>
   );
 };

@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo */}
-          <div>
-            <h3 className="font-display text-3xl tracking-wider mb-2">TÁBITA</h3>
-            <p className="text-primary-foreground/60 text-sm tracking-widest">
+          <div className="select-text">
+            <h3 className="font-display text-3xl tracking-wider mb-1">TÁBITA</h3>
+            <p className="text-primary-foreground/60 pl-7 text-sm tracking-widest">
               TEMOZÓN
             </p>
           </div>
@@ -21,7 +21,7 @@ const Footer = () => {
               Temozón Norte, Mérida, Yucatán
             </p>
             <p className="text-primary-foreground/60 text-sm mt-1">
-              Desarrollado por Grupo VAMU
+              Diseñado y desarrollado por Búho Solutions
             </p>
           </div>
 

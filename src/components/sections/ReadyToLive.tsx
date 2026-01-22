@@ -22,7 +22,8 @@ const ReadyToLive = () => {
               Sin esperas
             </span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              Listos para<br />Habitar
+              <span className="text-display mb-2 block sm:mb-6">Listos para<br /></span>
+              <span className="font-fragile font-bold mb-2 block sm:mb-6 lg:mb-12">Habitar</span>
             </h2>
             <p className="text-lg text-primary-foreground/80 leading-relaxed mb-10">
               Tábita Temozón se entrega como un proyecto 100% funcional,
@@ -41,7 +42,7 @@ const ReadyToLive = () => {
                     <div className="p-1 bg-primary-foreground/20 rounded-full">
                       <Check className="w-4 h-4" />
                     </div>
-                    <span>{item}</span>
+                    <span className="font-segoe italic font-bold">{item}</span>
                   </StaggerItem>
                 ))}
               </StaggerContainer>
@@ -58,15 +59,15 @@ const ReadyToLive = () => {
               />
             </div>
             {/* Floating Badge */}
-            <ScrollReveal 
-              variant="scale" 
+            <ScrollReveal
+              variant="scale"
               delay={0.6}
               className="absolute -bottom-6 -right-6 bg-background text-foreground p-6 rounded-lg shadow-strong"
             >
               <p className="text-sm uppercase tracking-widest text-muted-foreground mb-1">
                 Entrega
               </p>
-              <p className="text-2xl font-display">Inmediata</p>
+              <p className="text-2xl font-segoe font-bold">Inmediata</p>
             </ScrollReveal>
           </ScrollReveal>
         </div>

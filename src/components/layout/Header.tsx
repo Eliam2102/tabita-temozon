@@ -36,11 +36,10 @@ const Header = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-background/95 backdrop-blur-md border-b border-border/50"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+          ? "bg-background/95 backdrop-blur-md border-b border-border/50"
+          : "bg-transparent"
+          }`}
       >
         <div className="container-custom">
           <div className="flex items-center justify-between h-20 lg:h-24">
@@ -51,21 +50,13 @@ const Header = () => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="group"
+              className="group select-text"
             >
               <span
-                className={`font-display text-2xl lg:text-3xl tracking-[0.15em] transition-colors duration-300 ${
-                  isScrolled ? "text-foreground" : "text-primary-foreground"
-                }`}
+                className={`font-display text-2xl lg:text-3xl tracking-[0.15em] transition-colors duration-300 ${isScrolled ? "text-foreground" : "text-primary-foreground"
+                  }`}
               >
                 TÁBITA
-              </span>
-              <span
-                className={`block text-[10px] lg:text-xs tracking-[0.4em] uppercase transition-colors duration-300 ${
-                  isScrolled ? "text-muted-foreground" : "text-primary-foreground/70"
-                }`}
-              >
-                Temozón
               </span>
             </a>
 
@@ -78,17 +69,15 @@ const Header = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * index, duration: 0.5 }}
                   onClick={() => scrollToSection(item.href)}
-                  className={`relative text-sm tracking-[0.1em] uppercase transition-all duration-300 group ${
-                    isScrolled
-                      ? "text-muted-foreground hover:text-foreground"
-                      : "text-primary-foreground/80 hover:text-primary-foreground"
-                  }`}
+                  className={`relative text-sm tracking-[0.1em] uppercase transition-all duration-300 group ${isScrolled
+                    ? "text-muted-foreground hover:text-foreground"
+                    : "text-primary-foreground/80 hover:text-primary-foreground"
+                    }`}
                 >
                   {item.label}
                   <span
-                    className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${
-                      isScrolled ? "bg-foreground" : "bg-primary-foreground"
-                    }`}
+                    className={`absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full ${isScrolled ? "bg-foreground" : "bg-primary-foreground"
+                      }`}
                   />
                 </motion.button>
               ))}
@@ -100,11 +89,10 @@ const Header = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
               onClick={() => scrollToSection("#contacto")}
-              className={`hidden lg:block px-6 py-3 text-sm tracking-[0.1em] uppercase border transition-all duration-300 ${
-                isScrolled
-                  ? "border-foreground text-foreground hover:bg-foreground hover:text-background"
-                  : "border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-              }`}
+              className={`hidden lg:block px-6 py-3 text-sm tracking-[0.1em] uppercase border transition-all duration-300 ${isScrolled
+                ? "border-foreground text-foreground hover:bg-foreground hover:text-background"
+                : "border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                }`}
             >
               Agenda cita
             </motion.button>
@@ -116,15 +104,13 @@ const Header = () => {
             >
               {isMobileMenuOpen ? (
                 <X
-                  className={`w-6 h-6 ${
-                    isScrolled ? "text-foreground" : "text-primary-foreground"
-                  }`}
+                  className={`w-6 h-6 ${isScrolled ? "text-foreground" : "text-primary-foreground"
+                    }`}
                 />
               ) : (
                 <Menu
-                  className={`w-6 h-6 ${
-                    isScrolled ? "text-foreground" : "text-primary-foreground"
-                  }`}
+                  className={`w-6 h-6 ${isScrolled ? "text-foreground" : "text-primary-foreground"
+                    }`}
                 />
               )}
             </button>

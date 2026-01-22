@@ -38,7 +38,8 @@ const Contact = () => {
               Da el primer paso
             </span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
-              Agenda<br />una Cita
+              <span className="text-display mb-2 block sm:mb-6">Agenda<br /></span>
+              <span className="text-display">una Cita</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-10">
               Forma parte de un proyecto diseñado para el presente y el futuro.
@@ -70,7 +71,7 @@ const Contact = () => {
             >
               <div className="flex items-center gap-3 mb-8">
                 <Calendar className="w-6 h-6 text-primary" />
-                <h3 className="font-display text-2xl text-foreground">
+                <h3 className="font-segoe font-bold text-2xl text-foreground">
                   Solicita información
                 </h3>
               </div>

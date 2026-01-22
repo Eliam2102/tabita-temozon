@@ -25,11 +25,12 @@ const Investment = () => {
     <section id="inversion" className="section-padding bg-secondary">
       <div className="container-custom">
         <ScrollReveal variant="fade-up" className="text-center mb-16">
-          <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 block">
+          <span className="text-2xl md:text-3xl font-glamore tracking-[0.1em] mb-6 block">
             Protege tu patrimonio
           </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
-            Una Inversión con<br />Visión a Futuro
+          <h2 className="font-glamore text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
+            <span className="text-glamore mb-2 block sm:mb-6">Una Inversión con<br /></span>
+            <span className="text-glamore">Visión a <span className="font-bold font-fragile lg:text-7xl">Futuro</span></span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Ubicación, diseño y baja densidad convierten a Tábita Temozón en una
@@ -46,9 +47,9 @@ const Investment = () => {
               className="text-center p-8 bg-background rounded-lg shadow-soft"
             >
               <div className="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
-                <benefit.icon className="w-8 h-8 text-primary" />
+                <benefit.icon className="w-8 h-8 font-bold text-primary" />
               </div>
-              <h3 className="font-display text-xl text-foreground mb-3">
+              <h3 className="font-segoe italic font-bold text-xl text-foreground mb-3">
                 {benefit.title}
               </h3>
               <p className="text-muted-foreground">{benefit.description}</p>
@@ -74,7 +75,7 @@ const Investment = () => {
                   <span className="text-sm tracking-[0.3em] uppercase text-primary-foreground/70 mb-4 block">
                     Opciones disponibles
                   </span>
-                  <h3 className="font-display text-3xl md:text-4xl lg:text-5xl mb-6">
+                  <h3 className="font-glamore font-bold text-3xl md:text-4xl lg:text-5xl mb-6">
                     Precios Competitivos
                   </h3>
                   <p className="text-primary-foreground/80 text-lg mb-6">
@@ -91,19 +92,19 @@ const Investment = () => {
                   <p className="text-sm uppercase tracking-widest text-primary-foreground/70 mb-2">
                     Desde
                   </p>
-                  <p className="font-display text-4xl md:text-5xl lg:text-6xl mb-2">
+                  <p className="text-xl text-4xl md:text-5xl lg:text-6xl mb-2">
                     $1,950,000
                   </p>
-                  <p className="text-primary-foreground/60 text-lg mb-6">MXN</p>
-                  
+                  <p className="text-primary-foreground/60 text-lg mb-6 font-segoe">MXN</p>
+
                   <div className="border-t border-primary-foreground/20 pt-6 mt-6">
                     <p className="text-sm uppercase tracking-widest text-primary-foreground/70 mb-2">
                       Hasta
                     </p>
-                    <p className="font-display text-3xl md:text-4xl">
+                    <p className="text-xl text-3xl md:text-4xl">
                       $2,650,000
                     </p>
-                    <p className="text-primary-foreground/60">MXN</p>
+                    <p className="text-primary-foreground/60 font-segoe">MXN</p>
                   </div>
                 </div>
               </div>
