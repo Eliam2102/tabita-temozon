@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo */}
-          <div className="select-text">
+          <div className="select-text text-center md:text-left">
             <h3 className="font-display text-3xl tracking-wider mb-1">TÁBITA</h3>
-            <p className="text-primary-foreground/60 pl-7 text-sm tracking-widest">
+            <p className="text-primary-foreground/60 md:pl-7 text-sm tracking-widest">
               TEMOZÓN
             </p>
           </div>
@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="text-right">
+          <div className="text-center md:text-right">
             <p className="text-primary-foreground/60 text-sm">
               © {currentYear} Tábita Temozón
             </p>

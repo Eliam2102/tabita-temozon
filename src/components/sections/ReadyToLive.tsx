@@ -62,7 +62,7 @@ const ReadyToLive = () => {
             <ScrollReveal
               variant="scale"
               delay={0.6}
-              className="absolute -bottom-6 -right-6 bg-background text-foreground p-6 rounded-lg shadow-strong"
+              className="absolute -bottom-6 left-0 right-0 mx-4 md:mx-0 md:-right-6 md:left-auto bg-background text-foreground p-6 rounded-lg shadow-strong text-center md:text-left"
             >
               <p className="text-sm uppercase tracking-widest text-muted-foreground mb-1">
                 Entrega

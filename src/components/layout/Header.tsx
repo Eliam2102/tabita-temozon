@@ -53,7 +53,7 @@ const Header = () => {
               className="group select-text"
             >
               <span
-                className={`font-display text-2xl lg:text-3xl tracking-[0.15em] transition-colors duration-300 ${isScrolled ? "text-foreground" : "text-primary-foreground"
+                className={`font-display text-2xl lg:text-3xl tracking-[0.15em] transition-colors duration-300 ${isMobileMenuOpen || !isScrolled ? "text-primary-foreground" : "text-foreground"
                   }`}
               >
                 TÁBITA
@@ -97,19 +97,18 @@ const Header = () => {
               Agenda cita
             </motion.button>
 
-            {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 -mr-2"
+              className="lg:hidden p-2 -mr-2 relative z-50 flex items-center justify-center"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
                 <X
-                  className={`w-6 h-6 ${isScrolled ? "text-foreground" : "text-primary-foreground"
-                    }`}
+                  className="w-8 h-8 text-primary-foreground"
                 />
               ) : (
                 <Menu
-                  className={`w-6 h-6 ${isScrolled ? "text-foreground" : "text-primary-foreground"
+                  className={`w-8 h-8 transition-colors duration-300 ${isScrolled ? "text-foreground" : "text-primary-foreground"
                     }`}
                 />
               )}

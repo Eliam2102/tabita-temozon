@@ -49,7 +49,7 @@ const Typologies = () => {
             Opciones para ti
           </span>
           <h2 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground">
-            <span className="block mb-6 md:mb-6 ">Tipologías de</span>
+            <span className="block mb-6 md:mb-6 lg:mb-10  ">Tipologías de</span>
             <span className="block font-bold font-fragile">Departamentos</span>
           </h2>
         </ScrollReveal>

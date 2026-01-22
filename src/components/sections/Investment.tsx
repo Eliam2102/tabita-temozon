@@ -92,7 +92,7 @@ const Investment = () => {
                   <p className="text-sm uppercase tracking-widest text-primary-foreground/70 mb-2">
                     Desde
                   </p>
-                  <p className="text-xl text-4xl md:text-5xl lg:text-6xl mb-2">
+                  <p className="text-4xl md:text-5xl lg:text-6xl mb-2">
                     $1,950,000
                   </p>
                   <p className="text-primary-foreground/60 text-lg mb-6 font-segoe">MXN</p>

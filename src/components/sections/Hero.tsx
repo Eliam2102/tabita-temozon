@@ -49,7 +49,7 @@ const Hero = ({ onLoaded }: HeroProps) => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-primary"
     >
       {/* Background Layer - Slowest parallax */}
       <motion.div
