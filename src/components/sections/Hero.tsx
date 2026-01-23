@@ -8,7 +8,8 @@ interface HeroProps {
 }
 
 const Hero = ({ onLoaded }: HeroProps) => {
-  const [loaderPhase, setLoaderPhase] = useState<"loading" | "transitioning" | "done">("loading");
+  // const [loaderPhase, setLoaderPhase] = useState<"loading" | "transitioning" | "done">("loading");
+  const [loaderPhase, setLoaderPhase] = useState<"loading" | "transitioning" | "done">("done"); // Loader deshabilitado temporalmente para pruebas
   const sectionRef = useRef<HTMLElement>(null);
 
   // Parallax scroll effects
@@ -25,6 +26,11 @@ const Hero = ({ onLoaded }: HeroProps) => {
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.85, 0.95]);
 
   useEffect(() => {
+    // Loader temporalmente deshabilitado: Saltamos directamente al estado 'done'
+    setLoaderPhase("done");
+    if (onLoaded) onLoaded(true);
+
+    /* 
     // Phase 1: Show loader - wait for fill to complete (2.5s duration + 0.3s delay = 2.8s)
     const transitionTimer = setTimeout(() => {
       setLoaderPhase("transitioning");
@@ -40,6 +46,7 @@ const Hero = ({ onLoaded }: HeroProps) => {
       clearTimeout(transitionTimer);
       clearTimeout(doneTimer);
     };
+    */
   }, [onLoaded]);
 
   const scrollToSection = (id: string) => {
@@ -81,7 +88,8 @@ const Hero = ({ onLoaded }: HeroProps) => {
 
 
 
-      {/* Loader with Filling Typography */}
+      {/* Loader with Filling Typography - DESHABILITADO TEMPORALMENTE */}
+      {/* 
       <AnimatePresence>
         {loaderPhase === "loading" && (
           <motion.div
@@ -89,9 +97,7 @@ const Hero = ({ onLoaded }: HeroProps) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Grid para apilar perfectamente las letras */}
             <div className="grid" style={{ gridTemplateAreas: "'stack'" }}>
-              {/* Outline Base */}
               <h1
                 className="font-display text-[15vw] md:text-[12vw] lg:text-[10vw] font-light leading-none tracking-wider select-none text-center"
                 style={{
@@ -103,7 +109,6 @@ const Hero = ({ onLoaded }: HeroProps) => {
                 TÁBITA
               </h1>
 
-              {/* Filling animation - contenedor más alto para llenado completo */}
               <motion.h1
                 className="font-display text-[15vw] md:text-[12vw] lg:text-[10vw] font-light leading-none tracking-wider text-primary-foreground/20 -mt-2 md:-mt-4 pt-2 md:pt-4 text-center"
                 style={{ gridArea: "stack" }}
@@ -117,6 +122,7 @@ const Hero = ({ onLoaded }: HeroProps) => {
           </motion.div>
         )}
       </AnimatePresence>
+      */}
 
       {/* Hero Content - Only reveals AFTER loader is done */}
       <motion.div
