@@ -22,15 +22,15 @@ const Investment = () => {
   ];
 
   return (
-    <section id="inversion" className="section-padding bg-secondary">
+    <section id="inversion" className="section-padding bg-secondary overflow-hidden">
       <div className="container-custom">
         <ScrollReveal variant="fade-up" className="text-center mb-16">
-          <span className="text-2xl md:text-3xl font-glamore tracking-[0.1em] mb-6 block">
+          <span className="text-xl md:text-2xl font-segoe tracking-[0.1em] text-muted-foreground mb-3 block">
             Protege tu patrimonio
           </span>
           <h2 className="font-glamore text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
-            <span className="text-glamore mb-2 block sm:mb-6">Una Inversión con<br /></span>
-            <span className="text-glamore">Visión a <span className="font-bold font-fragile lg:text-7xl">Futuro</span></span>
+            <span className="text-glamore mb-2 block sm:mb-6">Una Inversión con Visión a</span>
+            <span className="ont-bold font-fragile lg:text-7xl">Futuro</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Ubicación, diseño y baja densidad convierten a Tábita Temozón en una
@@ -112,7 +112,7 @@ const Investment = () => {
           </div>
         </ScrollReveal>
       </div>
-    </section>
+    </section >
   );
 };
 

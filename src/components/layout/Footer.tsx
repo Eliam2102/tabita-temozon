@@ -21,7 +21,7 @@ const Footer = () => {
               Temozón Norte, Mérida, Yucatán
             </p>
             <p className="text-primary-foreground/60 text-sm mt-1">
-              Diseñado y desarrollado por Búho Solutions
+              Diseñado y desarrollado por <a href="https://www.buho-solutions.com/" target="_blank" rel="noopener noreferrer" className="underline">Búho Solutions</a>
             </p>
           </div>
 

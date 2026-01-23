@@ -42,26 +42,26 @@ const Typologies = () => {
   ];
 
   return (
-    <section id="tipologias" className="section-padding bg-secondary">
+    <section id="tipologias" className="section-padding bg-secondary overflow-hidden">
       <div className="container-custom">
         <ScrollReveal variant="fade-up" className="text-center mb-16">
-          <span className="text-xl md:text-2xl font-display font-bold tracking-[0.1em] text-muted-foreground mb-6 block">
-            Opciones para ti
+          <span className="text-xl md:text-2xl font-segoe tracking-[0.1em] text-muted-foreground mb-6 block">
+            Opciones que se ajustan a tus necesidades
           </span>
-          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground">
-            <span className="block mb-6 md:mb-6 lg:mb-10  ">Tipologías de</span>
-            <span className="block font-bold font-fragile">Departamentos</span>
+          <h2 className="">
+            <span className="block font-glamore text-3xl mb-6 md:mb-6 lg:mb-5  ">Tipologías de</span>
+            <span className="block font-fragile text-4xl md:text-5xl lg:text-6xl mb-6">Departamentos</span>
           </h2>
         </ScrollReveal>
 
-        {/* Tab Buttons - Horizontal Scroll on Mobile */}
+        {/* Tab Buttons - Centered on Mobile */}
         <ScrollReveal variant="fade-up" delay={0.2} className="relative mb-12">
-          <div className="flex overflow-x-auto pb-4 gap-4 justify-center no-scrollbar touch-pan-x">
+          <div className="flex flex-wrap pb-4 gap-3 sm:gap-4 justify-center no-scrollbar">
             {apartments.map((apt, index) => (
               <button
                 key={apt.title}
                 onClick={() => setActiveTab(index)}
-                className={`px-8 py-4 rounded-lg font-medium transition-all duration-300 ${activeTab === index
+                className={`px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base ${activeTab === index
                   ? "bg-primary text-primary-foreground shadow-medium"
                   : "bg-background text-foreground hover:bg-primary hover:text-primary-foreground"
                   }`}
@@ -113,30 +113,33 @@ const Typologies = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-2 block">
+              <span className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-3 block">
                 Departamento de
               </span>
-              <h3 className="font-display text-4xl md:text-6xl text-foreground mb-4">
-                {apartments[activeTab].title}
+              <h3 className="text-3xl md:text-5xl lg:text-6xl text-foreground mb-4 flex items-baseline gap-2">
+                <span className="font-display leading-none">{apartments[activeTab].title.split(' ')[0]}</span>
+                <span className="font-glamore uppercase leading-none">{apartments[activeTab].title.split(' ').slice(1).join(' ')}</span>
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 {apartments[activeTab].description}
               </p>
 
-              {/* Features Grid */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
+              {/* Features Grid - Always 2 columns with adjusted padding/font for mobile */}
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-8">
                 {apartments[activeTab].features.map((feature, index) => (
                   <motion.div
                     key={feature.label}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 + index * 0.1 }}
-                    className="flex items-center gap-3 p-4 bg-background rounded-lg"
+                    className="flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-background rounded-lg border border-border/50 text-center sm:text-left"
                   >
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <feature.icon className="w-5 h-5 text-primary" />
+                    <div className="p-2 bg-primary/10 rounded-lg shrink-0">
+                      <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                     </div>
-                    <span className="text-foreground font-bold font-segoe">{feature.label}</span>
+                    <span className="text-foreground font-bold font-segoe text-[10px] sm:text-sm md:text-base leading-tight">
+                      {feature.label}
+                    </span>
                   </motion.div>
                 ))}
               </div>
@@ -146,17 +149,18 @@ const Typologies = () => {
                 <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
                   Distribución incluye
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {apartments[activeTab].extras.map((extra, index) => (
-                    <motion.span
+                    <motion.div
                       key={extra}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4 + index * 0.05 }}
-                      className="px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm"
+                      className="px-4 py-3 bg-primary/[0.03] text-primary border border-primary/10 rounded-lg text-[10px] md:text-xs font-bold uppercase tracking-widest flex items-center gap-3"
                     >
-                      {extra}
-                    </motion.span>
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0" />
+                      <span className="leading-tight">{extra}</span>
+                    </motion.div>
                   ))}
                 </div>
               </div>

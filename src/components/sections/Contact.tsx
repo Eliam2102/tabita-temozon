@@ -29,7 +29,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contacto" className="section-padding bg-background bg-pattern">
+    <section id="contacto" className="section-padding bg-background bg-pattern overflow-hidden">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Content */}
@@ -37,9 +37,9 @@ const Contact = () => {
             <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 block">
               Da el primer paso
             </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
-              <span className="text-display mb-2 block sm:mb-6">Agenda<br /></span>
-              <span className="text-display">una Cita</span>
+            <h2 className="font-glamore text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
+              <span className="text-glamore mb-2 block sm:mb-4">Agenda<br /></span>
+              <span className="text-glamore">una Cita</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-10">
               Forma parte de un proyecto diseñado para el presente y el futuro.

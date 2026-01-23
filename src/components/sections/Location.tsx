@@ -11,7 +11,7 @@ const Location = () => {
   ];
 
   return (
-    <section id="ubicacion" className="section-padding bg-primary text-primary-foreground">
+    <section id="ubicacion" className="section-padding bg-primary text-primary-foreground overflow-hidden">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-20">
           {/* Map - Redesigned */}
@@ -26,12 +26,12 @@ const Location = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0 grayscale contrast-125 opacity-90"
+                className="absolutes"
               />
 
               {/* Elegant Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-transparent pointer-events-none" />
+              <div className="absolute " />
+              <div className="absolute" />
 
               {/* Location Card - Floating */}
               <motion.div
@@ -61,12 +61,12 @@ const Location = () => {
 
           {/* Content */}
           <ScrollReveal variant="fade-left" delay={0.2} className="order-1 lg:order-2">
-            <span className="text-sm tracking-[0.3em] uppercase font- text-primary-foreground/70 mb-4 block">
+            <span className="text-xl md:text-2xl font-segoe tracking-[0.1em]  mb-4 block">
               Temozón Norte
             </span>
-            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl mb-6 leading-tight">
-              <span className="block mb-2 sm:mb-4">Ubicación</span>
-              <span className="block font-fragile font-bold sm:mb-2 lg:mb-8">Estratégica</span>
+            <h2 className="">
+              <span className="block font-glamore text-3xl uppercase mb-2 sm:mb-6">un luigar que lo tiene todo</span>
+              <span className="block font-fragile text-4xl md:text-5xl lg:text-5xl leading-tight mb-6">Ubicación Estratégica</span>
             </h2>
             <p className="text-lg text-primary-foreground/80 leading-relaxed mb-10">
               Ubicado a una calle de la carretera Mérida–Progreso y con acceso

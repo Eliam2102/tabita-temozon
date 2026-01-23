@@ -10,15 +10,16 @@ const Concept = () => {
   ];
 
   return (
-    <section id="concepto" className="section-padding bg-background bg-pattern">
+    <section id="concepto" className="section-padding bg-background bg-pattern overflow-hidden">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text Content */}
           <ScrollReveal variant="fade-right">
-            <span className="font-display text-2xl text-muted-foreground mb-4 block">
+            <span className="font-segoe text-xl text-muted-foreground mb-4 block">BIENVENIDO A TU NUEVO HOGAR</span>
+            <span className="font-glamore text-3xl text-muted-foreground mb-8 block">
               Un desarrollo pensado para
             </span>
-            <h2 className="font-fragile  text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
+            <h2 className="font-fragile text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
               La vida actual
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -61,7 +62,7 @@ const Concept = () => {
                 className="absolute -bottom-6 left-0 right-0 mx-4 md:mx-0 md:-left-6 md:right-auto bg-primary text-primary-foreground p-6 rounded-lg shadow-strong text-center md:text-left"
               >
                 <p className="text-sm uppercase tracking-widest mb-1">Proyecto</p>
-                <p className="text-2xl font-segoe font-bold">De Baja Densidad</p>
+                <p className="text-2xl font-segoe font-bold">Ubicación Estratégica</p>
               </ScrollReveal>
             </div>
           </ScrollReveal>

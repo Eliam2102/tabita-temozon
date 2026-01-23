@@ -125,12 +125,15 @@
     @apply border-border;
   }
 
-  html {
-    scroll-behavior: smooth;
+  html, body {
+    @apply overflow-x-hidden;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
   }
 
   body {
-    @apply bg-background text-foreground antialiased select-none overflow-x-hidden;
+    @apply bg-background text-foreground antialiased select-none;
     font-family: var(--font-body);
   }
 

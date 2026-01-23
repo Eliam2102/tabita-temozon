@@ -27,7 +27,7 @@ const Materials = () => {
   ];
 
   return (
-    <section id="materiales" className="section-padding bg-background">
+    <section id="materiales" className="section-padding bg-background overflow-hidden">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Grid */}
@@ -73,15 +73,15 @@ const Materials = () => {
 
           {/* Content */}
           <ScrollReveal variant="fade-left" delay={0.2}>
-            <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 block">
+            <span className="text-xl md:text-2xl font-segoe tracking-[0.1em] text-muted-foreground mb-3 block">
               Calidad que se siente
             </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
+            <h2 className="block font-glamore text-4xl sm:text-5xl md:text-6xl mb-6 lg:mb-5">
               <span className="block mb-2 sm:mb-4">Materiales que</span>
               <span className="block mb-2 sm:mb-4">Elevan la</span>
-              <span className="block font-fragile mb-2 sm:mb-4">Experiencia</span>
+              <span className="block font-fragile text-4xl md:text-5xl lg:text-6xl mb-8">Experiencia</span>
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Cada departamento ha sido proyectado con materiales seleccionados
               por su durabilidad, estética y fácil mantenimiento, cuidando cada
               detalle desde la estructura hasta los acabados finales.

@@ -56,7 +56,7 @@ const Hero = ({ onLoaded }: HeroProps) => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-primary"
+      className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-primary"
     >
       {/* Background Layer - Slowest parallax */}
       <motion.div
@@ -170,31 +170,31 @@ const Hero = ({ onLoaded }: HeroProps) => {
           >
             Departamentos diseñados para vivir e invertir en Temozón Norte
           </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{
-              opacity: loaderPhase === "done" ? 1 : 0,
-              y: loaderPhase === "done" ? 0 : 20
-            }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mt-20 md:mt-12"
-          >
-            <button
-              onClick={() => scrollToSection("concepto")}
-              className="px-8 py-3 border border-primary-foreground/30 text-primary-foreground text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-primary-foreground hover:text-primary"
-            >
-              Descubre más
-            </button>
-            <button
-              onClick={() => scrollToSection("contacto")}
-              className="px-8 py-3 bg-primary-foreground text-primary text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-primary-foreground/90"
-            >
-              Agenda una cita
-            </button>
-          </motion.div>
         </motion.div>
+      </motion.div>
+
+      {/* CTA Buttons - Positioned at bottom area on mobile following design requirements */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{
+          opacity: loaderPhase === "done" ? 1 : 0,
+          y: loaderPhase === "done" ? 0 : 20
+        }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="z-20 absolute bottom-28 left-6 right-6 md:relative md:bottom-auto md:left-auto md:right-auto md:mt-12 flex flex-col sm:flex-row gap-4 justify-center w-auto max-w-md mx-auto md:max-w-none"
+      >
+        <button
+          onClick={() => scrollToSection("concepto")}
+          className="w-full sm:w-auto px-8 py-3 border border-primary-foreground/30 text-primary-foreground text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-primary-foreground hover:text-primary"
+        >
+          Descubre más
+        </button>
+        <button
+          onClick={() => scrollToSection("contacto")}
+          className="w-full sm:w-auto px-8 py-3 bg-primary-foreground text-primary text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-primary-foreground/90"
+        >
+          Agenda una cita
+        </button>
       </motion.div>
 
 
