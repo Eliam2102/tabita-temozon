@@ -45,7 +45,7 @@ const Typologies = () => {
     <section id="tipologias" className="section-padding bg-secondary overflow-hidden">
       <div className="container-custom">
         <ScrollReveal variant="fade-up" className="text-center mb-16">
-          <span className="text-xl md:text-2xl font-segoe tracking-[0.1em] text-muted-foreground mb-6 block">
+          <span className="text-xl uppercase md:text-2xl font-segoe tracking-[0.1em] text-muted-foreground mb-6 block">
             Opciones que se ajustan a tus necesidades
           </span>
           <h2 className="">
@@ -116,7 +116,7 @@ const Typologies = () => {
               <span className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-3 block">
                 Departamento de
               </span>
-              <h3 className="text-3xl md:text-5xl lg:text-6xl text-foreground mb-4 flex items-baseline gap-2">
+              <h3 className="text-1xl md:text-3xl lg:text-4xl text-foreground mb-4 flex items-baseline gap-2">
                 <span className="font-display leading-none">{apartments[activeTab].title.split(' ')[0]}</span>
                 <span className="font-glamore uppercase leading-none">{apartments[activeTab].title.split(' ').slice(1).join(' ')}</span>
               </h3>

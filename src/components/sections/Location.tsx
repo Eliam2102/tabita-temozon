@@ -61,11 +61,11 @@ const Location = () => {
 
           {/* Content */}
           <ScrollReveal variant="fade-left" delay={0.2} className="order-1 lg:order-2">
-            <span className="text-xl md:text-2xl font-segoe tracking-[0.1em]  mb-4 block">
+            <span className="text-xl md:text-2xl uppercase font-segoe tracking-[0.1em]  mb-4 block">
               Temozón Norte
             </span>
             <h2 className="">
-              <span className="block font-glamore text-3xl uppercase mb-2 sm:mb-6">un luigar que lo tiene todo</span>
+              <span className="block font-glamore text-3xl uppercase mb-2 sm:mb-6">un lugar que lo tiene todo</span>
               <span className="block font-fragile text-4xl md:text-5xl lg:text-5xl leading-tight mb-6">Ubicación Estratégica</span>
             </h2>
             <p className="text-lg text-primary-foreground/80 leading-relaxed mb-10">

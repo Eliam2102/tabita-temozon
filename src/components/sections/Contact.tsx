@@ -37,9 +37,10 @@ const Contact = () => {
             <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 block">
               Da el primer paso
             </span>
-            <h2 className="font-glamore text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
-              <span className="text-glamore mb-2 block sm:mb-4">Agenda<br /></span>
-              <span className="text-glamore">una Cita</span>
+            <h2 className="block font-glamore text-3xl mb-6 md:mb-6 lg:mb-5">
+              <span className="text-glamore mb-2">Agenda una Cita</span>
+              <span className="text-glamore mb-2 block sm:mb-4">y conoce tu nuevo <br /></span>
+              <span className="font-fragile text-4xl md:text-5xl lg:text-6xl">Hogar</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-10">
               Forma parte de un proyecto diseñado para el presente y el futuro.

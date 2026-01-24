@@ -61,7 +61,7 @@ const Concept = () => {
                 delay={0.6}
                 className="absolute -bottom-6 left-0 right-0 mx-4 md:mx-0 md:-left-6 md:right-auto bg-primary text-primary-foreground p-6 rounded-lg shadow-strong text-center md:text-left"
               >
-                <p className="text-sm uppercase tracking-widest mb-1">Proyecto</p>
+                <p className="text-sm uppercase tracking-widest mb-1">Un Proyecto Con</p>
                 <p className="text-2xl font-segoe font-bold">Ubicación Estratégica</p>
               </ScrollReveal>
             </div>

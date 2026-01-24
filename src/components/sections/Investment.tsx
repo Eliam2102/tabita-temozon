@@ -25,11 +25,11 @@ const Investment = () => {
     <section id="inversion" className="section-padding bg-secondary overflow-hidden">
       <div className="container-custom">
         <ScrollReveal variant="fade-up" className="text-center mb-16">
-          <span className="text-xl md:text-2xl font-segoe tracking-[0.1em] text-muted-foreground mb-3 block">
+          <span className="text-xl uppercase md:text-2xl font-segoe tracking-[0.1em] text-muted-foreground mb-3 block">
             Protege tu patrimonio
           </span>
           <h2 className="font-glamore text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">
-            <span className="text-glamore mb-2 block sm:mb-6">Una Inversión con Visión a</span>
+            <span className="block font-glamore text-3xl mb-6 md:mb-6 lg:mb-5">Una Inversión con Visión a</span>
             <span className="ont-bold font-fragile lg:text-7xl">Futuro</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

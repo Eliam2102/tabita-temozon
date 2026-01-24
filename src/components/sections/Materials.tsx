@@ -73,12 +73,11 @@ const Materials = () => {
 
           {/* Content */}
           <ScrollReveal variant="fade-left" delay={0.2}>
-            <span className="text-xl md:text-2xl font-segoe tracking-[0.1em] text-muted-foreground mb-3 block">
+            <span className="text-xl md:text-1xl font-segoe tracking-[0.1em] uppercase text-muted-foreground mb-3 block">
               Calidad que se siente
             </span>
             <h2 className="block font-glamore text-4xl sm:text-5xl md:text-6xl mb-6 lg:mb-5">
-              <span className="block mb-2 sm:mb-4">Materiales que</span>
-              <span className="block mb-2 sm:mb-4">Elevan la</span>
+              <span className="block font-glamore text-3xl mb-6 md:mb-6 lg:mb-5">Materiales que Elevan la</span>
               <span className="block font-fragile text-4xl md:text-5xl lg:text-6xl mb-8">Experiencia</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">

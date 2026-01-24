@@ -18,12 +18,12 @@ const ReadyToLive = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <ScrollReveal variant="fade-right">
-            <span className="text-xl md:text-2xl font-segoe tracking-[0.1em] mb-4 block">
+            <span className="text-xl md:text-2xl uppercase font-segoe tracking-[0.1em] mb-4 block">
               Sin esperas
             </span>
             <h2 className="block font-glamore mb-6 lg:mb-5">
-              <span className="block font-glamore text-4xl sm:text-5xl md:text-6xl mb-3 md:mb-6 lg:mb-5 leading-none">Listos para<br /></span>
-              <span className="font-fragile font-bold text-4xl sm:text-5xl md:text-6xl mb-2 block sm:mb-6 lg:mb-12 leading-none">Habitar</span>
+              <span className="block font-glamore text-3xl mb-6 md:mb-6 lg:mb-5  ">Espacios Listos para<br /></span>
+              <span className="font-fragile text-4xl sm:text-5xl md:text-6xl mb-2 block sm:mb-6 lg:mb-12 ">Habitar</span>
             </h2>
             <p className="text-lg text-primary-foreground/80 leading-relaxed mb-10">
               Tábita Temozón se entrega como un proyecto 100% funcional,
