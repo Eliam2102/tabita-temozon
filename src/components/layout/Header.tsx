@@ -36,7 +36,7 @@ const Header = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled && !isMobileMenuOpen
           ? "bg-background/95 backdrop-blur-md border-b border-border/50"
           : "bg-transparent"
           }`}
@@ -137,7 +137,7 @@ const Header = () => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ delay: 0.05 * index, duration: 0.3 }}
                     onClick={() => scrollToSection(item.href)}
-                    className="text-2xl font-display text-primary-foreground tracking-widest"
+                    className="text-2xl font-segoe text-primary-foreground tracking-widest"
                   >
                     {item.label}
                   </motion.button>

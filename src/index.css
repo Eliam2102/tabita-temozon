@@ -125,16 +125,23 @@
     @apply border-border;
   }
 
-  html, body {
-    @apply overflow-x-hidden;
-    max-width: 100%;
+  html {
+    background-color: hsl(var(--primary));
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
     width: 100%;
-    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   body {
     @apply bg-background text-foreground antialiased select-none;
     font-family: var(--font-body);
+    overflow-x: hidden;
   }
 
   h1,
