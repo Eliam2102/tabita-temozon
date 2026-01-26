@@ -49,7 +49,7 @@ const Investment = () => {
               <div className="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
                 <benefit.icon className="w-8 h-8 font-bold text-primary" />
               </div>
-              <h3 className="font-segoe italic font-bold text-xl text-foreground mb-3">
+              <h3 className="font-segoe font-bold text-xl text-foreground mb-3">
                 {benefit.title}
               </h3>
               <p className="text-muted-foreground">{benefit.description}</p>
