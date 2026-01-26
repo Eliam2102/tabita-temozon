@@ -8,8 +8,7 @@ interface HeroProps {
 }
 
 const Hero = ({ onLoaded }: HeroProps) => {
-  // const [loaderPhase, setLoaderPhase] = useState<"loading" | "transitioning" | "done">("loading");
-  const [loaderPhase, setLoaderPhase] = useState<"loading" | "transitioning" | "done">("done"); // Loader deshabilitado temporalmente para pruebas
+  const [loaderPhase, setLoaderPhase] = useState<"loading" | "transitioning" | "done">("loading");
   const sectionRef = useRef<HTMLElement>(null);
 
   // Parallax scroll effects
@@ -27,10 +26,9 @@ const Hero = ({ onLoaded }: HeroProps) => {
 
   useEffect(() => {
     // Loader temporalmente deshabilitado: Saltamos directamente al estado 'done'
-    setLoaderPhase("done");
+    setLoaderPhase("loading");
     if (onLoaded) onLoaded(true);
 
-    /* 
     // Phase 1: Show loader - wait for fill to complete (2.5s duration + 0.3s delay = 2.8s)
     const transitionTimer = setTimeout(() => {
       setLoaderPhase("transitioning");
@@ -46,7 +44,7 @@ const Hero = ({ onLoaded }: HeroProps) => {
       clearTimeout(transitionTimer);
       clearTimeout(doneTimer);
     };
-    */
+
   }, [onLoaded]);
 
   const scrollToSection = (id: string) => {
@@ -86,10 +84,6 @@ const Hero = ({ onLoaded }: HeroProps) => {
         <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNhKSIvPjwvc3ZnPg==')]" />
       </motion.div>
 
-
-
-      {/* Loader with Filling Typography - DESHABILITADO TEMPORALMENTE */}
-      {/* 
       <AnimatePresence>
         {loaderPhase === "loading" && (
           <motion.div
@@ -122,7 +116,7 @@ const Hero = ({ onLoaded }: HeroProps) => {
           </motion.div>
         )}
       </AnimatePresence>
-      */}
+
 
       {/* Hero Content - Only reveals AFTER loader is done */}
       <motion.div

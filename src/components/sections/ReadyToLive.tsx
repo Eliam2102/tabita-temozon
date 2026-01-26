@@ -7,9 +7,7 @@ const ReadyToLive = () => {
     "Cocina equipada",
     "Parrilla y campana",
     "Calentador eléctrico",
-    "Clósets",
-    "Electrodomésticos",
-    "Muebles y decoración del departamento muestra",
+    "Clósets"
   ];
 
   return (
@@ -42,7 +40,7 @@ const ReadyToLive = () => {
                     <div className="p-1 bg-primary-foreground/20 rounded-full">
                       <Check className="w-4 h-4" />
                     </div>
-                    <span className="font-segoe italic font-bold">{item}</span>
+                    <span className="font-segoe font-bold">{item}</span>
                   </StaggerItem>
                 ))}
               </StaggerContainer>

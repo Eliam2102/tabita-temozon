@@ -96,7 +96,7 @@ const Materials = () => {
                   <div className="flex items-center gap-4 sm:block">
                     <material.icon className="w-8 h-8 text-primary shrink-0 block sm:hidden" />
                     <div>
-                      <h3 className="font-segoe italic font-bold text-2xl text-foreground mb-2">
+                      <h3 className="font-segoe font-bold text-2xl text-foreground mb-2">
                         {material.title}
                       </h3>
                       <p className="text-muted-foreground text-sm">
