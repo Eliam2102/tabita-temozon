@@ -89,6 +89,9 @@ const Investment = () => {
                 </div>
 
                 <div className="text-center md:text-right">
+                  <div className="inline-block px-3 py-1 rounded-full bg-white/20 border border-white/30 text-[10px] uppercase tracking-widest mb-4">
+                    Etapa de Preventa
+                  </div>
                   <p className="text-sm uppercase tracking-widest text-primary-foreground/70 mb-2">
                     Desde
                   </p>

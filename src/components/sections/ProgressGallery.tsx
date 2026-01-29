@@ -31,15 +31,15 @@ const ProgressGallery = () => {
     ];
 
     return (
-        <section id="avance" className="section-padding bg-background overflow-hidden border-t border-border/50">
+        <section id="avance" className="section-padding bg-background overflow-hidden  border-border/50">
             <div className="container-custom">
                 <ScrollReveal variant="fade-up" className="text-center mb-16">
                     <span className="text-xl uppercase md:text-2xl font-segoe tracking-[0.1em] text-muted-foreground mb-4 block">
                         Nuestra Evolución
                     </span>
                     <h2 className="">
-                        <span className="block font-glamore text-3xl mb-6 md:mb-6 lg:mb-5">Galería de</span>
-                        <span className="block font-fragile text-4xl md:text-5xl lg:text-6xl mb-6">Avance de Obra</span>
+                        <span className="block font-glamore text-3xl mb-6 md:mb-6 lg:mb-5">Galería de Avance</span>
+                        <span className="block font-fragile text-4xl md:text-5xl lg:text-6xl mb-6">de Obra</span>
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         Sigue de cerca el proceso de construcción de tu próximo departamento en Temozón Norte.

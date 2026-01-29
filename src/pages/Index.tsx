@@ -7,6 +7,7 @@ import Location from "@/components/sections/Location";
 import Typologies from "@/components/sections/Typologies";
 import Materials from "@/components/sections/Materials";
 import ReadyToLive from "@/components/sections/ReadyToLive";
+import PresaleHook from "@/components/sections/PresaleHook";
 import Investment from "@/components/sections/Investment";
 import ProgressGallery from "@/components/sections/ProgressGallery";
 import Contact from "@/components/sections/Contact";
@@ -26,6 +27,7 @@ const Index = () => {
             <Typologies />
             <Materials />
             <ReadyToLive />
+            <PresaleHook />
             <Investment />
             <ProgressGallery />
             <Contact />
