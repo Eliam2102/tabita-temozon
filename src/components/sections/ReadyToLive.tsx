@@ -49,12 +49,15 @@ const ReadyToLive = () => {
 
           {/* Image */}
           <ScrollReveal variant="fade-left" delay={0.2} className="relative">
-            <div className="overflow-hidden rounded-lg shadow-strong">
+            <div className="overflow-hidden rounded-lg shadow-strong relative">
               <img
                 src={readyToLiveImg}
                 alt="Departamento listo para habitar"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
+              <div className="absolute top-4 left-4 right-4 text-zinc-400 text-[8px] md:text-[10px] italic pointer-events-none">
+                “Imagen ilustrativa, no incluye mobiliario. El mobiliario presente es únicamente para dimensionar el espacio”
+              </div>
             </div>
             {/* Floating Badge */}
             <ScrollReveal
@@ -65,7 +68,7 @@ const ReadyToLive = () => {
               <p className="text-sm uppercase tracking-widest text-muted-foreground mb-1">
                 Entrega
               </p>
-              <p className="text-2xl font-segoe font-bold">Inmediata</p>
+              <p className="text-2xl font-segoe font-bold">A partir de Diciembre 2026</p>
             </ScrollReveal>
           </ScrollReveal>
         </div>

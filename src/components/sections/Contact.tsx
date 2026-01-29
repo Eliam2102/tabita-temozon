@@ -23,8 +23,8 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: Phone, label: "Teléfono", value: "+52 999 XXX XXXX" },
-    { icon: Mail, label: "Correo", value: "info@tabita.mx" },
+    { icon: Phone, label: "Teléfono", value: "+52 999 365 7830" },
+    { icon: Mail, label: "Correo", value: "tabita@grupolamu.com" },
     { icon: MapPin, label: "Ubicación", value: "Temozón Norte, Mérida, Yucatán" },
   ];
 
@@ -131,7 +131,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                    placeholder="+52 999 XXX XXXX"
+                    placeholder="+52 999 365 7830"
                   />
                 </div>
 

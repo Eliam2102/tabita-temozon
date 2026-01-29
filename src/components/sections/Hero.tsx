@@ -230,6 +230,18 @@ const Hero = ({ onLoaded }: HeroProps) => {
           <ChevronDown className="w-5 h-5 text-primary-foreground/40" />
         </motion.div>
       </motion.div>
+
+      {/* Image Disclaimer */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: loaderPhase === "done" ? 1 : 0 }}
+        transition={{ duration: 0.8, delay: 1.5 }}
+        className="absolute bottom-4 right-6 hidden md:block z-30"
+      >
+        <p className="text-[10px] text-zinc-400 italic pointer-events-none text-right max-w-[200px] leading-tight">
+          “Imagen ilustrativa, no incluye mobiliario. El mobiliario presente es únicamente para dimensionar el espacio”
+        </p>
+      </motion.div>
     </section>
   );
 };

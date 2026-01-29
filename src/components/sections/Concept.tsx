@@ -54,6 +54,9 @@ const Concept = () => {
                   className="w-full h-[500px] lg:h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                <div className="absolute bottom-2 left-2 right-2 text-zinc-500 text-[8px] md:text-[10px] sm:bottom-4 sm:left-4 italic pointer-events-none">
+                  “Imagen ilustrativa, no incluye mobiliario. El mobiliario presente es únicamente para dimensionar el espacio”
+                </div>
               </div>
               {/* Floating Badge */}
               <ScrollReveal

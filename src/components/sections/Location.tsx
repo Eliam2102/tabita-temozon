@@ -19,7 +19,7 @@ const Location = () => {
             <div className="aspect-[4/5] sm:aspect-video lg:aspect-auto lg:h-full bg-primary-foreground/5 rounded-2xl overflow-hidden relative shadow-strong">
               {/* Google Maps Embed - Temozón Norte, Mérida */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14904.589977693!2d-89.62!3d21.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5673a77b0c9a8d%3A0x5c3e7c8e8f8e8e8e!2sTemoz%C3%B3n%20Norte%2C%20M%C3%A9rida%2C%20Yuc.!5e0!3m2!1ses-419!2smx!4v1705847400000!5m2!1ses-419!2smx"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1421.1584039490428!2d-89.63312076517118!3d21.06584813239197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5675000cb5ddb1%3A0xf9bcd741910b77a3!2sT%C3%A1bita%20Temoz%C3%B3n%20Norte!5e0!3m2!1ses-419!2smx!4v1769643451204!5m2!1ses-419!2smx"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

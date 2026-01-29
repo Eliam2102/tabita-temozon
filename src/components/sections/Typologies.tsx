@@ -20,9 +20,9 @@ const Typologies = () => {
         { icon: Bed, label: "1 recámara" },
         { icon: Bath, label: "1 baño completo" },
         { icon: Car, label: "1 estacionamiento" },
-        { icon: Maximize, label: "Closet vestidor" },
+        { icon: Maximize, label: "Closet" },
       ],
-      extras: ["Sala y comedor", "Cocina", "Closet vestidor"],
+      extras: ["Sala y comedor", "Cocina", "Closet"],
     },
     {
       title: "2 Recámaras",
@@ -94,6 +94,9 @@ const Typologies = () => {
                   alt={`Departamento de ${apartments[activeTab].title}`}
                   className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover"
                 />
+                <div className="absolute bottom-2 left-2 right-2 text-zinc-500 text-[8px] md:text-[10px] sm:bottom-4 sm:left-4 italic pointer-events-none">
+                  “Imagen ilustrativa, no incluye mobiliario. El mobiliario presente es únicamente para dimensionar el espacio”
+                </div>
               </div>
               {/* Area Badge */}
               <motion.div

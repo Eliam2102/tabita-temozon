@@ -19,6 +19,7 @@ const Header = () => {
     { label: "Ubicación", href: "#ubicacion" },
     { label: "Departamentos", href: "#tipologias" },
     { label: "Inversión", href: "#inversion" },
+    { label: "Avance", href: "#avance" },
     { label: "Contacto", href: "#contacto" },
   ];
 
