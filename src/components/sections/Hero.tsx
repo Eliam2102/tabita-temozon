@@ -92,7 +92,7 @@ const Hero = ({ onLoaded }: HeroProps) => {
             transition={{ duration: 0.8 }}
           >
             <div className="grid" style={{ gridTemplateAreas: "'stack'" }}>
-              <h1
+              <div
                 className="font-display text-[15vw] md:text-[12vw] lg:text-[10vw] font-light leading-none tracking-wider select-none text-center"
                 style={{
                   gridArea: "stack",
@@ -101,9 +101,9 @@ const Hero = ({ onLoaded }: HeroProps) => {
                 }}
               >
                 TÁBITA
-              </h1>
+              </div>
 
-              <motion.h1
+              <motion.div
                 className="font-display text-[15vw] md:text-[12vw] lg:text-[10vw] font-light leading-none tracking-wider text-primary-foreground/20 -mt-2 md:-mt-4 pt-2 md:pt-4 text-center"
                 style={{ gridArea: "stack" }}
                 initial={{ clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)" }}
@@ -111,7 +111,7 @@ const Hero = ({ onLoaded }: HeroProps) => {
                 transition={{ duration: 2.5, delay: 0.3, ease: "easeOut" }}
               >
                 TÁBITA
-              </motion.h1>
+              </motion.div>
             </div>
           </motion.div>
         )}
