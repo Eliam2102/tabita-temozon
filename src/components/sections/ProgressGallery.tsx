@@ -9,7 +9,7 @@ const ProgressGallery = () => {
             date: "Enero 2026",
             title: "Limpieza y Nivelación",
             description: "Inicio de preparativos en el terreno y delimitación del área de construcción.",
-            image: "https://res.cloudinary.com/drvazwldo/image/upload/v1769033188/concepto-tabita-min_xztrnu.jpg",
+            image: "https://res.cloudinary.com/drvazwldo/image/upload/v1770403553/AVANCE-OBRA-FEBRERO-min_kpa3hy.jpg",
             locked: false
         },
         {
@@ -70,8 +70,6 @@ const ProgressGallery = () => {
                                     <DialogTrigger asChild>
                                         <div className="relative overflow-hidden rounded-xl bg-secondary aspect-[4/5] shadow-strong cursor-pointer group">
                                             <motion.img
-                                                initial={{ scale: 1.1 }}
-                                                whileHover={{ scale: 1 }}
                                                 transition={{ duration: 0.6 }}
                                                 src={update.image}
                                                 alt={update.title}
@@ -99,22 +97,20 @@ const ProgressGallery = () => {
                                         </div>
                                     </DialogTrigger>
 
-                                    <DialogContent className="max-w-[95vw] md:max-w-[85vw] lg:max-w-screen-xl h-[85vh] p-0 overflow-hidden bg-black border-none ring-0">
-                                        <div className="relative w-full h-full flex items-center justify-center p-4">
-                                            <img
-                                                src={update.image}
-                                                alt={update.title}
-                                                className="max-w-full max-h-full object-contain"
-                                            />
-                                            <div className="absolute bottom-6 left-6 right-6 text-white text-center md:text-left bg-black/40 backdrop-blur-xl p-6 rounded-2xl border border-white/10">
-                                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                                    <div>
-                                                        <span className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-2 block">
-                                                            {update.date}
-                                                        </span>
-                                                        <h2 className="font-glamore text-2xl md:text-3xl">{update.title}</h2>
-                                                    </div>
-                                                    <p className="text-white/60 text-sm max-w-md leading-relaxed">
+                                    <DialogContent className="w-screen h-screen max-w-none m-0 p-0 rounded-none bg-transparent border-none shadow-none ring-0 translate-x-0 translate-y-0 top-0 left-0 flex items-center justify-center data-[state=open]:slide-in-from-bottom-0 data-[state=closed]:slide-out-to-bottom-0 [&>button]:fixed [&>button]:top-6 [&>button]:right-6 [&>button]:w-12 [&>button]:h-12 [&>button]:bg-white/10 [&>button]:backdrop-blur-md [&>button]:border [&>button]:border-white/20 [&>button]:text-white [&>button]:hover:bg-white/20 [&>button]:rounded-full [&>button]:opacity-100 [&>button]:flex [&>button]:items-center [&>button]:justify-center [&>button]:transition-all [&>button]:z-[60] focus:outline-none">
+                                        <div className="relative flex items-center justify-center w-full h-full p-4 md:p-10 pointer-events-none">
+                                            <div className="relative relative group pointer-events-auto">
+                                                <img
+                                                    src={update.image}
+                                                    alt={update.title}
+                                                    className="max-h-[85vh] max-w-[90vw] w-auto h-auto object-contain rounded-lg shadow-2xl"
+                                                />
+                                                <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end text-left">
+                                                    <span className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-1 block">
+                                                        {update.date}
+                                                    </span>
+                                                    <h2 className="font-glamore text-white text-xl md:text-2xl mb-1">{update.title}</h2>
+                                                    <p className="text-white/80 text-sm leading-relaxed max-w-2xl">
                                                         {update.description}
                                                     </p>
                                                 </div>

@@ -1,27 +1,7 @@
-import { useState } from "react";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
-import { Button } from "@/components/ui/button";
-import { Calendar, Phone, Mail, MapPin } from "lucide-react";
-import { toast } from "sonner";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("¡Gracias por tu interés! Te contactaremos pronto.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   const contactInfo = [
     { icon: Phone, label: "Teléfono", value: "+52 999 365 7830" },
     { icon: Mail, label: "Correo", value: "tabita@grupolamu.com" },
@@ -31,7 +11,7 @@ const Contact = () => {
   return (
     <section id="contacto" className="section-padding bg-background bg-pattern overflow-hidden">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
           <ScrollReveal variant="fade-right">
             <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4 block">
@@ -64,100 +44,16 @@ const Contact = () => {
             </StaggerContainer>
           </ScrollReveal>
 
-          {/* Form */}
-          <ScrollReveal variant="fade-left" delay={0.2}>
-            <form
-              onSubmit={handleSubmit}
-              className="bg-card p-8 md:p-10 rounded-xl shadow-strong border border-border"
-            >
-              <div className="flex items-center gap-3 mb-8">
-                <Calendar className="w-6 h-6 text-primary" />
-                <h3 className="font-segoe font-bold text-2xl text-foreground">
-                  Solicita información
-                </h3>
-              </div>
-
-              <div className="space-y-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-foreground mb-2"
-                  >
-                    Nombre completo
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                    placeholder="Tu nombre"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-foreground mb-2"
-                  >
-                    Correo electrónico
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                    placeholder="tu@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-foreground mb-2"
-                  >
-                    Teléfono
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                    placeholder="+52 999 365 7830"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-foreground mb-2"
-                  >
-                    Mensaje (opcional)
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
-                    placeholder="¿Tienes alguna pregunta?"
-                  />
-                </div>
-
-                <Button type="submit" variant="cta" size="xl" className="w-full">
-                  Enviar solicitud
-                </Button>
-              </div>
-            </form>
+          {/* Odoo Form Iframe */}
+          <ScrollReveal variant="fade-left" delay={0.2} className="w-full mt-8 lg:mt-6">
+            <div className="bg-card rounded-xl shadow-strong border border-border overflow-hidden">
+              <iframe
+                src="https://trezco.odoo.com/formulario-tabita"
+                style={{ width: '100%', height: '450px', border: 'none', overflow: 'hidden' }}
+                scrolling="no"
+                title="Formulario de Contacto Odoo"
+              />
+            </div>
           </ScrollReveal>
         </div>
       </div>
