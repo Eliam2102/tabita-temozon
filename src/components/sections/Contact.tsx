@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
-    { icon: Phone, label: "Teléfono", value: "+52 999 365 7830" },
+    { icon: Phone, label: "Teléfono", value: "+52 999 899 8927" },
     { icon: Mail, label: "Correo", value: "tabita@grupolamu.com" },
     { icon: MapPin, label: "Ubicación", value: "Temozón Norte, Mérida, Yucatán" },
   ];
